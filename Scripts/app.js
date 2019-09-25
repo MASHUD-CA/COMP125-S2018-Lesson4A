@@ -91,7 +91,9 @@ let app = (function () {
         myArray.push({ name: "Mashud_6", age: 75 });
         myArray.unshift({ name: "Ahmed_1", age: 20 }); // we will get Ahmed_1 as first line
 
-
+        for (const index in myArray) {
+            console.log(myArray[index]);
+        }
 
         //Print more than one paragraph
         let content = document.getElementsByClassName("content"); // array of elements not string
@@ -135,7 +137,8 @@ let app = (function () {
         }
         */
 
-        let arrayEmpty = true;
+       // let arrayEmpty = true;
+        let arrayEmpty;
         /*  if - else toggle 
        if(myArray.length > 0 ){
           arrayEmpty = false;
@@ -150,8 +153,19 @@ let app = (function () {
         if (myArray[1].name == "Mashud_1") {
             console.log("Second Element is Mashud_1");
         }
+
+       // console.log(myArray[0].age); better not to use alert. coz it pop up again and again. Can do for debugging and then delete. use confirm.
+       // window.alert("first element name: "  + myArray[0].name);
+        //Use below instead of window alert
+       //let decision = confirm("Are you sure ?");
+       //console.log(decision);
+
+
+
         //=== checks both value and type where == only checks value
         if (myArray[0].age === 20) {
+
+         //   console.log(myArray)
             console.log("My Age is 20"); // unshift used before so index 0 will show unshift method.
         }
 
@@ -181,6 +195,7 @@ let app = (function () {
         
         myFarouriteThingsList.forEach(thing => {
             let newItem = document.createElement("li");
+           // console.log(newItem); //Debugging only - remove this line when working
             newItem.textContent = thing;
             myFavouritesList.appendChild(newItem);
         });
@@ -238,7 +253,7 @@ let app = (function () {
     }
     */
     //Start(); // or below
-    // window.onload = Start;
+    // window.onload = Start; anonymous function
     window.addEventListener("load", Start); //asyncronous. fire their own time. I m returning my title before my listener trigger.
 
     //return 0;
