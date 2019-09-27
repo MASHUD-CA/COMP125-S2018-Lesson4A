@@ -137,7 +137,7 @@ let app = (function () {
         }
         */
 
-       // let arrayEmpty = true;
+        // let arrayEmpty = true;
         let arrayEmpty;
         /*  if - else toggle 
        if(myArray.length > 0 ){
@@ -154,18 +154,18 @@ let app = (function () {
             console.log("Second Element is Mashud_1");
         }
 
-       // console.log(myArray[0].age); better not to use alert. coz it pop up again and again. Can do for debugging and then delete. use confirm.
-       // window.alert("first element name: "  + myArray[0].name);
+        // console.log(myArray[0].age); better not to use alert. coz it pop up again and again. Can do for debugging and then delete. use confirm.
+        // window.alert("first element name: "  + myArray[0].name);
         //Use below instead of window alert
-       //let decision = confirm("Are you sure ?");
-       //console.log(decision);
+        //let decision = confirm("Are you sure ?");
+        //console.log(decision);
 
 
 
         //=== checks both value and type where == only checks value
         if (myArray[0].age === 20) {
 
-         //   console.log(myArray)
+            //   console.log(myArray)
             console.log("My Age is 20"); // unshift used before so index 0 will show unshift method.
         }
 
@@ -192,26 +192,23 @@ let app = (function () {
         //"Hook into" a ul that is empty that has an id of myFarouriteThings;
         let myFavouritesList = document.getElementById("myFavouriteThings");
         //foreach loop used here.
-        
+
         myFarouriteThingsList.forEach(thing => {
             let newItem = document.createElement("li");
-           // console.log(newItem); //Debugging only - remove this line when working
+            // console.log(newItem); //Debugging only - remove this line when working
             newItem.textContent = thing;
             myFavouritesList.appendChild(newItem);
         });
-        
+
 
         //let newItem = document.createElement("li");
         //newItem.textContent = "hello";
         //myFavouritesList.appendChild(newItem);
         console.log(myFavouritesList);
+    }
 
-
-
-
-
-
-
+    function ContactContent(){
+        //Next week 
     }
 
     function Start() {
@@ -222,18 +219,31 @@ let app = (function () {
         console.log("--------------------------------");
         console.log("Title: " + title);
 
-        switch (title) {
-            case "COMP125 - Home":
-                HomeContent();
-                break;
 
-            case "COMP125 - About":
-                Aboutcontent();
-                break;
+        try {
+            switch (title) {
+                case "COMP125 - Home":
+                    HomeContent();
+                    break;
 
-            default:
-                break;
+                case "COMP125 - About":
+                    Aboutcontent();
+                    break;
+
+                case "COMP125 - Contact":
+                    ContactContent();
+                    break;
+
+                default:
+                    throw ("Title Not Defined");
+                    break;
+            }
         }
+        catch (err) {
+            // console.log("Handling my error");
+            console.warn("Something went wrong when switching pages");
+        }
+
     }
 
     /* Learning different way of calling functions
